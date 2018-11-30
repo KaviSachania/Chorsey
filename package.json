@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm start --prefix server\" \"npm start --prefix client\"",
-    "postinstall": "npm install --prefix client && npm install --prefix server"
+    "postinstall": "npm install --prefix client && npm install --prefix server",
+    "heroku-postbuild": "npm install --prefix client && npm install --only=dev --no-shrinkwrap --prefix client && npm run build --prefix client && npm install --prefix server"
   },
   "cacheDirectories": [
     "client/node_modules",
