@@ -54,10 +54,10 @@ if (process.env.NODE_ENV === 'production') {
 
     server.use(express.static(buildPath));
 
-    // // Serve the HTML file included in the CRA client
-    // server.get('/', (request, response) => {
-    //     response.sendFile(path.join(buildPath, 'index.html'));
-    // });
+    // Serve the HTML file included in the CRA client
+    server.get('/', (request, response) => {
+        response.sendFile(path.join(buildPath, 'index.html'));
+    });
 }
 
 module.exports = app;
